@@ -16,19 +16,32 @@ const DAYS = [
 ];
 
 const LoveLogo = () => (
-  <div className="relative w-8 h-8 flex items-center justify-center">
-    <motion.div
-      animate={{ scale: [1, 1.1, 1] }}
-      transition={{ duration: 2, repeat: Infinity }}
-      className="absolute inset-0 bg-rose-400 rounded-full opacity-20 blur-sm"
-    />
-    <Heart className="w-5 h-5 text-rose-600 fill-rose-600 relative z-10" />
+  <div className="relative w-10 h-10 flex items-center justify-center">
+    {/* Outer Glow Ring */}
     <motion.div
       animate={{ rotate: 360 }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-      className="absolute -top-1 -right-1"
+      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+      className="absolute inset-0 border-2 border-dashed border-rose-300 rounded-full opacity-50"
+    />
+    
+    {/* Pulsing Core */}
+    <motion.div
+      animate={{ scale: [1, 1.2, 1] }}
+      transition={{ duration: 1.5, repeat: Infinity }}
+      className="relative z-10"
     >
-      <Sparkles className="w-3 h-3 text-amber-400" />
+       <Heart className="w-6 h-6 text-rose-600 fill-rose-600 drop-shadow-sm" />
+    </motion.div>
+
+    {/* Tiny Satellite Heart */}
+    <motion.div
+       animate={{ rotate: -360 }}
+       transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+       className="absolute inset-0"
+    >
+       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1">
+          <Heart className="w-3 h-3 text-pink-400 fill-pink-400" />
+       </div>
     </motion.div>
   </div>
 );
@@ -45,11 +58,11 @@ export default function Header() {
         
         {/* Logo Section */}
         <div 
-          className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity mr-4 flex-shrink-0" 
+          className="flex items-center gap-5 cursor-pointer hover:opacity-80 transition-opacity mr-4 flex-shrink-0" 
           onClick={() => navigate('/welcome')}
         >
           <LoveLogo />
-          <span className="hidden sm:block font-bold bg-gradient-to-r from-rose-600 to-pink-500 bg-clip-text text-transparent font-serif text-xl tracking-wide">
+          <span className="hidden sm:block ml-1 font-bold bg-gradient-to-r from-rose-600 to-pink-500 bg-clip-text text-transparent font-serif text-xl tracking-wide">
             Valentine's Week
           </span>
         </div>

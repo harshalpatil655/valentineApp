@@ -59,7 +59,7 @@ const RoseDay = () => {
       </p>
 
       <p className="text-sm sm:text-md text-pink-700 mb-4">
-        Make a bouquet for us! Click the roses below to add them.
+        Click the roses below to add them.
       </p>
 
       {/* Bouquet Display Area */}

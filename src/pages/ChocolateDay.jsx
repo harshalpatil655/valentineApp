@@ -72,7 +72,7 @@ const ChocolateDay = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 pb-10 px-4 w-full flex flex-col items-center justify-center overflow-x-hidden relative">
+    <div className="min-h-screen pt-4 pb-10 px-4 w-full flex flex-col items-center justify-center overflow-x-hidden relative">
       
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-100 -z-20" />
